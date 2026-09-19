@@ -1,0 +1,7 @@
+# 系統暫存與本機工具
+scratch/
+*.log
+.DS_Store
+Thumbs.db
+server.ps1
+啟動網頁.bat

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Minecraft 禮品卡刮刮樂 | 十元硬幣刮卡模擬</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- p5.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="title-badge">MINECRAFT INTERACTIVE</div>
+      <h1 class="app-title">
+        <span class="mc-icon">⛏️</span> 禮品卡刮刮樂
+      </h1>
+      <p class="app-subtitle">手持新台幣十元硬幣，刮開下方封條揭曉兌換序號</p>
+    </header>
+
+    <!-- Controls & Status Bar -->
+    <div class="control-panel">
+      <div class="progress-section">
+        <div class="progress-labels">
+          <span class="progress-text">刮除進度</span>
+          <span id="progress-percent" class="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="btn-sound" class="btn btn-secondary" title="切換音效">
+          <span id="sound-icon">🔊</span>
+          <span id="sound-text">音效開</span>
+        </button>
+        <button id="btn-reset" class="btn btn-primary" title="重新刮開">
+          <span>🔄</span> 重新刮卡
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Canvas Area -->
+    <main class="canvas-wrapper">
+      <div id="canvas-container" class="canvas-container">
+        <!-- p5.js canvas will attach here -->
+        <div id="interaction-hint" class="interaction-hint">
+          <span>🪙 點擊或滑動螢幕，拿十元硬幣刮開銀色封條</span>
+        </div>
+      </div>
+
+      <!-- Success Card (Revealed when completed) -->
+      <div id="success-banner" class="success-banner hidden">
+        <div class="success-content">
+          <div class="success-header">
+            <span class="sparkle">✨</span>
+            <h3>刮開成功！已獲得兌換代碼</h3>
+            <span class="sparkle">✨</span>
+          </div>
+          <div class="code-box">
+            <span id="redeem-code" class="code-text">473Q7-GRCF2-W6WKG-R3GXT-X3VXZ</span>
+            <button id="btn-copy" class="btn-copy" title="複製兌換代碼">
+              <span id="copy-text">複製</span>
+            </button>
+          </div>
+          <p class="success-tip">可前往 <a href="https://minecraft.net/redeem" target="_blank" rel="noopener">minecraft.net/redeem</a> 進行兌換</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer / Instructions -->
+    <footer class="app-footer">
+      <div class="instructions-card">
+        <h4>💡 互動提示</h4>
+        <ul>
+          <li><strong>電腦操作</strong>：按住滑鼠左鍵並在「封條區域」來回塗抹滑動。</li>
+          <li><strong>手機/觸控</strong>：用手指按住封條位置來回刮拭。</li>
+          <li>刮除面積達到 <strong>80%</strong> 以上，系統將自動完成並揭曉完整卡片與代碼！</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
