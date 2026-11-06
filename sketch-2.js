@@ -20,7 +20,7 @@ let canvasH = 618;
 // 經量測：Left: 11.91%, Top: 77.38%, Width: 77.70%, Height: 4.76%
 const SEAL_NORM = {
   x: 0.122,
-  y: 0.795,
+  y: 0.695,
   w: 0.804,
   h: 0.073
 };
