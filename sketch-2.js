@@ -19,18 +19,18 @@ let canvasH = 618;
 // 虛擬封條幾何資料（相對於卡片未開封圖片的比例）
 // 經量測：Left: 11.91%, Top: 77.38%, Width: 77.70%, Height: 4.76%
 const SEAL_NORM = {
-  x: 0.119,
-  y: 0.772,
-  w: 0.777,
-  h: 0.052
+  x: 0.122,
+  y: 0.695,
+  w: 0.804,
+  h: 0.073
 };
 
 // 已開封圖片中的序號對應裁切比例
 const CODE_NORM = {
-  x: 0.100,
-  y: 0.768,
-  w: 0.810,
-  h: 0.070
+  x: 0.112,
+  y: 0.705,
+  w: 0.828,
+  h: 0.082
 };
 
 // 離屏繪圖緩衝區（虛擬封條遮罩圖層）
@@ -231,9 +231,9 @@ function calculateDimensions() {
   const container = document.getElementById('canvas-container');
   const maxWidth = container ? min(container.clientWidth, 440) : 380;
   
-  // 保持禮品卡原始寬高比例（1964 x 3192 ≈ 0.615）
+  // 保持禮品卡原始寬高比例（1024 / 688）
   cardWidth = max(maxWidth, 280);
-  cardHeight = Math.round(cardWidth * (3192 / 1964));
+  cardHeight = Math.round(cardWidth * (1024 / 688));
 
   canvasW = cardWidth;
   canvasH = cardHeight;
