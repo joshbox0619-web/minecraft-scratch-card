@@ -442,8 +442,8 @@ function calculateProgress() {
   scratchProgress = percent;
   updateProgressUI(percent);
 
-  // 達到 90% 判定為完成
-  if (percent >= 90 && !isCompleted) {
+  // 達到 95% 判定為完成
+  if (percent >= 95 && !isCompleted) {
     triggerCompletion();
   }
 }
