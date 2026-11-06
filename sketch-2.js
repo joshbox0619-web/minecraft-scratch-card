@@ -17,10 +17,10 @@ let canvasW = 380;
 let canvasH = 618;
 
 // 虛擬封條幾何資料（相對於卡片未開封圖片的比例）
-// 經量測：Left: 11.91%, Top: 69.50%, Width: 77.70%, Height: 4.76%
+// 經量測：Left: 11.91%, Top: 77.38%, Width: 77.70%, Height: 4.76%
 const SEAL_NORM = {
   x: 0.122,
-  y: 0.695,
+  y: 0.795,
   w: 0.804,
   h: 0.073
 };
